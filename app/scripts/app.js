@@ -1,10 +1,10 @@
 (function() {
      function config($stateProvider, $locationProvider) {
        $locationProvider
-         .html5mode({
-           enabled:true.
-           requirebas:false
-         });
+          .html5Mode({
+              enabled: true,
+              requireBase: false
+          });
 
         $stateProvider
         .state('landing', {
@@ -18,6 +18,7 @@
          })
          .state('collection', {
              url: '/collection',
+             controller: 'CollectionCtrl as collection',
              templateUrl: '/templates/collection.html'
          });
      }
