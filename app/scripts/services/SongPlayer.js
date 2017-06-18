@@ -22,8 +22,9 @@
 
           var setSong = function(song) {
             if (currentBuzzObject) {
-              currentBuzzObject.stop();
-              SongPlayer.currentSong.playing = null;
+              stopSong();
+              /*currentBuzzObject.stop();
+              SongPlayer.currentSong.playing = null;*/
             }
 
             currentBuzzObject = new buzz.sound(song.audioUrl, {
@@ -49,6 +50,16 @@
           */
           var getSongIndex = function(song) {
                return currentAlbum.songs.indexOf(song);
+           };
+           /**
+           * @function stopSong
+           * @desc Plays currentBuzzObject and sets playing variable to true
+           * @param {Object} song
+           */
+
+           var stopSong = function(song){
+             currentBuzzObject.stop();
+             SongPlayer.currentSong.playing = null;
            };
 
           /**
@@ -77,7 +88,7 @@
         };
 
         /**
-* @desc previous song is will now go back one index on the song array
+* @desc calls on the previous song, it will now go back one index on the song array
 * @type {Array}
 */
         SongPlayer.previous = function() {
@@ -85,8 +96,9 @@
              currentSongIndex--;
 
              if (currentSongIndex < 0) {
-         currentBuzzObject.stop();
-         SongPlayer.currentSong.playing = null;
+          stopSong();
+         /*currentBuzzObject.stop();
+         SongPlayer.currentSong.playing = null;*/
        } else {
            var song = currentAlbum.songs[currentSongIndex];
            setSong(song);
@@ -94,8 +106,28 @@
        }
          };
 
+         /**
+    * @desc calls on next song, it will now go forward one index on the song array
+    * @type {Array}
+    */
+           SongPlayer.next = function(){
+             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+             currentSongIndex++;
+             if (currentSongIndex >= currentAlbum.songs.length) {
+          stopSong();
+         /*currentBuzzObject.stop();
+         SongPlayer.currentSong.playing = null;*/
+       } else {
+           var song = currentAlbum.songs[currentSongIndex];
+           setSong(song);
+           playSong(song);
+       }
+           };
+
           return SongPlayer;
      }
+
+
 
      angular
          .module('blocJams')
