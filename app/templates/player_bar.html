@@ -24,7 +24,7 @@
             <h3 class="artist-name">{{ album.albumData.artist }}</h3>
             <div class="seek-control">
                <seek-bar></seek-bar>
-                <div class="current-time"></div>
+                <div class="current-time">{{ songPlayer.currentTime.time }}</div>
                 <div class="total-time">{{ album.songPlayer.currentSong.duration}}</div>
             </div>
         </div>
