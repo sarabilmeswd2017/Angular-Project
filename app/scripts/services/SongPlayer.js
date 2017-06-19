@@ -82,7 +82,7 @@
   * @desc Current playback time (in seconds) of currently playing song
   * @type {Number}
  */
-         SongPlayer.volume = null;
+         SongPlayer.volume = 80;
 
           SongPlayer.play = function(song){
             song = song || SongPlayer.currentSong;
@@ -149,6 +149,16 @@
              if (currentBuzzObject) {
                currentBuzzObject.setTime(time);
              }
+           };
+
+           SongPlayer.setVolume = function(volume){
+             // update the song player volume to the new volume
+             SongPlayer.volume = volume;
+             // Use buzz to set the volume of the actual audio
+             if(currentBuzzObject){
+               currentBuzzObject.setVolume(volume);
+             }
+
            };
 
           return SongPlayer;
