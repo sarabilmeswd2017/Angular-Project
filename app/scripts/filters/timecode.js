@@ -21,9 +21,14 @@
       return output;
     };
   }
-  /*var currentBuzzObject = null;
+/*var currentBuzzObject = null;
 
-  buzz.toTimer(currentBuzzObject.getDuration());*/
+   currentBuzzObject = new buzz.sound(song.audioUrl, {
+    formats: ['mp3'],
+    preload: true
+  });
+
+  buzz.toTimer(currentBuzzObject.currentTime());*/
 
 
   angular
