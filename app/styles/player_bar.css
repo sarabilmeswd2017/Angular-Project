@@ -151,8 +151,18 @@
       font-size: 1.1rem;
       display: inline-block;
       vertical-align: middle;
+      margin-left:0.5rem;
   }
 
+.player-bar .volume .iconmute{
+  font-size: 1.1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.volume .iconmute:hover{
+  transform:scale(1.2);
+}
   .player-bar .volume .seek-bar {
       display: inline-block;
       width: 5.75rem;
