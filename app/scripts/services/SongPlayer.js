@@ -140,6 +140,7 @@
        }
            };
 
+
            /**
            * @function setCurrentTime
            * @desc Set current time (in seconds) of currently playing song
@@ -160,6 +161,18 @@
              }
 
            };
+
+           /**
+           * @desc mutes the song when you click on the mute icon
+           * @type {Button}
+           */
+                      SongPlayer.mute = function(volume){
+                         if(currentBuzzObject.isMuted()){
+                           currentBuzzObject.unmute();
+                         }else{
+                           currentBuzzObject.mute();
+                         }
+                      }
 
           return SongPlayer;
      }
