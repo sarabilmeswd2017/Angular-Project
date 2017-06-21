@@ -37,6 +37,7 @@
      width: 25%;
      text-align: left;
      padding-right: 1rem;
+     
  }
 
  .player-bar .main-controls .previous {
@@ -160,7 +161,7 @@
   vertical-align: middle;
 }
 
-.volume .iconmute:hover{
+.iconmute:hover{
   transform:scale(1.2);
 }
   .player-bar .volume .seek-bar {
