@@ -160,7 +160,7 @@
   vertical-align: middle;
 }
 
-.volume .iconmute:hover{
+.iconmute:hover{
   transform:scale(1.2);
 }
   .player-bar .volume .seek-bar {
