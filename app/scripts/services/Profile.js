@@ -14,7 +14,7 @@
      Profile.getProfile = function() {
          return SaraBilmes;
      };
-
+     return Profile;
    }
 
    angular
