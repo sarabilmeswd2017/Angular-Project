@@ -1,6 +1,6 @@
 (function() {
   function timecode() {
-    /*return function(seconds) {
+    return function(seconds) {
       var seconds = Number.parseFloat(seconds);
 
       if (Number.isNaN(seconds)) {
@@ -20,15 +20,8 @@
 
       return output;
     };
-  }*/
-var currentBuzzObject = null;
+  }
 
-   currentBuzzObject = new buzz.sound(song.audioUrl, {
-    formats: ['mp3'],
-    preload: true
-  });
-
-  buzz.toTimer(currentBuzzObject.currentTime());
 
 
   angular
