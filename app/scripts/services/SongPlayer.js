@@ -96,7 +96,8 @@
        } else if ( SongPlayer.currentSong  === song) {
          if (currentBuzzObject.isPaused()) {
              currentBuzzObject.play();
-
+         } else{
+           SongPlayer.pause();
          }
      }
      };
