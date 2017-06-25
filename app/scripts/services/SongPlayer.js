@@ -40,6 +40,10 @@
 
              SongPlayer.currentSong = song;
           };
+
+          /*buzz.toTimer(currentBuzzObject.currentTime());
+          buzz.toTimer(currentBuzzObject.duration());*/
+
           /**
         * @function playSong
         * @desc Plays currentBuzzObject and sets playing variable to true
@@ -79,7 +83,7 @@
  */
          SongPlayer.currentTime = null;
   /**
-  * @desc Current playback time (in seconds) of currently playing song
+  * @desc Current volume set ot 80
   * @type {Number}
  */
          SongPlayer.volume = 80;
@@ -92,7 +96,8 @@
        } else if ( SongPlayer.currentSong  === song) {
          if (currentBuzzObject.isPaused()) {
              currentBuzzObject.play();
-
+         } else{
+           SongPlayer.pause();
          }
      }
      };
@@ -161,6 +166,9 @@
              }
 
            };
+
+
+
 
            /**
            * @desc mutes the song when you click on the mute icon
