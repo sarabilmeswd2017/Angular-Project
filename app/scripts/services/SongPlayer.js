@@ -96,17 +96,19 @@
        } else if ( SongPlayer.currentSong  === song) {
          if (currentBuzzObject.isPaused()) {
              currentBuzzObject.play();
-         } else{
-           SongPlayer.pause();
-         }
+           } 
      }
+     song.playing = true;
      };
 
          SongPlayer.pause = function(song) {
           song = song || SongPlayer.currentSong;
-          currentBuzzObject.pause();
-          song.playing = false;
-        };
+        /*  if(SongPlayer.currentSong === song && currentBuzzObject.isPaused() === false){
+            if (SongPlayer.currentSong === song && song.playing === true){*/
+              currentBuzzObject.pause();
+              song.playing = false;
+
+          };
 
         /**
 * @desc calls on the previous song, it will now go back one index on the song array
