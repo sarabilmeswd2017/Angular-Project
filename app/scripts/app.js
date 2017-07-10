@@ -1,5 +1,6 @@
 (function() {
      function config($stateProvider, $locationProvider) {
+       console.log('test');
        $locationProvider
 
           .html5Mode({
